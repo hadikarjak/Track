@@ -289,6 +289,10 @@ a:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.search-form {
+  text-align: center;
+  padding: 1.5rem 3rem 3rem 3rem !important;
+}
 .media {
   display: flex;
   align-items: flex-start;
@@ -313,6 +317,7 @@ a:hover {
 .timeline-item:last-child {
   padding-bottom: 0;
 }
+
 .done {
   color: var(--second-color);
 }
@@ -417,7 +422,17 @@ a:hover {
   padding: 3px 5px 3px 5px;
   border-radius: 0 10px 10px 0px;
 }
-
+.timeline-centered li:last-child .timeline-marker::before {
+  animation: change-color 0.8s infinite alternate;
+  border-color: var(--second-color);
+}
+.timeline-centered .period:last-child .timeline-marker::before {
+  border-width: 13px;
+  border-radius: 0 0 10px 10px;
+  rotate: 180deg;
+  animation: change-color-border 0.8s infinite alternate;
+  border-top: 3px solid #f45050;
+}
 @media (min-width: 768px) {
   .timeline-split .timeline,
   .timeline-centered .timeline {
@@ -518,6 +533,14 @@ a:hover {
 /* End Timeline */
 
 /* Start Animation */
+@keyframes change-color-border {
+  from {
+    border-bottom-color: #ccd5db;
+  }
+  to {
+    border-bottom-color: var(--second-color);
+  }
+}
 @keyframes change-color {
   from {
     background-color: var(--second-color);
